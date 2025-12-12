@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "🐾: Animal default constructor called." << std::endl;
-	this->_type = "General Animal";
+	std::cout << "⭕🐾: WrongAnimal default constructor called." << std::endl;
+	this->_type = "General WrongAnimal";
 }
 
-Animal::Animal(const Animal &other)
+WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
-	std::cout << "🐾: Animal copy constructor called." << std::endl;
+	std::cout << "⭕🐾: WrongAnimal copy constructor called." << std::endl;
 	this->_type = other._type;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "🐾: Animal default destructor called." << std::endl;
+	std::cout << "⭕🐾: WrongAnimal default destructor called." << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &other)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other)
 {
-	std::cout << "🐾: Animal copy assignment constructor called." << std::endl;
+	std::cout << "⭕🐾: WrongAnimal copy assignment constructor called." << std::endl;
 	if (this != &other)
 	{
 		this->_type = other._type;
@@ -39,22 +39,12 @@ Animal &Animal::operator=(const Animal &other)
 	return (*this);
 }
 
-void Animal::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	std::cout << "🐾: *Default animal sound.*" << std::endl;
+	std::cout << "⭕🐾: *Default WrongAnimal sound.*" << std::endl;
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
 	return (this->_type);
-}
-
-void msg(std::string msg)
-{
-	std::cout << std::endl
-			  << "===== "
-			  << msg
-			  << " ====="
-			  << std::endl
-			  << std::endl;
 }

@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:50:45 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 15:51:37 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/12 19:30:18 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal() {
-	this->_type = "Cat";
-	std::cout << "🐈: Cat default constructor called." << std::endl;
+WrongCat::WrongCat() : WrongAnimal() {
+	this->_type = "WrongCat";
+	std::cout << "⭕🐈: WrongCat default constructor called." << std::endl;
 }
 
-Cat::~Cat() {
-	std::cout << "🐈: Cat default destructor called." << std::endl;
+WrongCat::~WrongCat() {
+	std::cout << "⭕🐈: WrongCat default destructor called." << std::endl;
 }
 
-Cat::Cat(const Cat &other) {
-	std::cout << "🐈: Cat copy operator called." << std::endl;
+WrongCat::WrongCat(const WrongCat &other) {
+	std::cout << "⭕🐈: WrongCat copy operator called." << std::endl;
 	this->_type = other._type;
 }
 
-Cat &Cat::operator=(const Cat &other)
+WrongCat &WrongCat::operator=(const WrongCat &other)
 {
-	std::cout << "🐈: Cat copy assignment operator called. " << std::endl;
+	std::cout << "⭕🐈: WrongCat copy assignment operator called. " << std::endl;
 	if (this != &other) {
 		this->_type = other._type;
 	}
 	return (*this);
 }
 
-void Cat::makeSound() const {
-	std::cout << "🐈: Miau - (Kitty sounds)." << std::endl;
+void WrongCat::makeSound() const {
+	std::cout << "⭕🐈: Miau - (Kitty sounds)." << std::endl;
 }

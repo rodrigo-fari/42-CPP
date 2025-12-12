@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:45:42 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/11/30 12:52:59 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:51:45 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal {
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
 
-		void makeSound();
+		void makeSound() const;
 };
 
 # endif

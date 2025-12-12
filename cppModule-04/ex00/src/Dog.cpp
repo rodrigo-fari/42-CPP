@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
@@ -14,26 +14,26 @@
 
 Dog::Dog() : Animal() {
 	this->_type = "Dog";
-	std::cout << "Dog: Default constructor called." << std::endl;
+	std::cout << "🐕: Dog default constructor called." << std::endl;
 }
 
 Dog::~Dog() {
-	std::cout << "Dog: Default destructor called." << std::endl;
+	std::cout << "🐕: Dog default destructor called." << std::endl;
 }
 
 Dog::Dog(const Dog& other) {
-	std::cout << "Dog: Copy operator called." << std::endl;
+	std::cout << "🐕: Dog copy operator called." << std::endl;
 	this->_type = other._type;
 }
 
 Dog& Dog::operator=(const Dog& other) {
-	std::cout << "Dog: Copy assignment operator called. " << std::endl;
+	std::cout << "🐕: Dog copy assignment operator called. " << std::endl;
 	if (this != &other) {
 		this->_type = other._type;
 	}
 	return (*this);
 }
 
-void	Dog::makeSound() {
-	std::cout << "AU AU e fds.(Projeto é meu o dog vai fazer a porra do barulho que eu quiser e fds.)" << std::endl;
+void	Dog::makeSound() const {
+	std::cout << "🐕: Oof Oof - (Doggy sounds)." << std::endl;
 }
