@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 20:22:40 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/13 20:38:49 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/15 12:02:25 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ Brain& Brain::operator=(const Brain& other) {
 }
 
 const std::string getIdea() {
-	for(int i = 0; )
+	
 }
