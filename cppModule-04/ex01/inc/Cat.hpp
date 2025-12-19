@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:45:47 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 15:51:27 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:54:54 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 # define CAT_HPP
 
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal {
+	private:
+		Brain* brain;
+
 	public:
 		Cat();
 		~Cat();
