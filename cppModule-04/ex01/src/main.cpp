@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:32:34 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/19 16:00:46 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/19 19:38:04 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int main(void)
 
 		msg("End fo Scope");
 	}
+		std::cout << "=============================================================| SCOPE 3" << std::endl;
 	{
 
 		const Animal *listAnimals[10];
 
-		std::cout << "/*********** Constructor Mensages ***********/" << std::endl << std::endl;
-
+		msg("Creation of Cats and Dogs.");
 		for (int i = 0; i < 10; i++){
 			if (i < 5){
 				listAnimals[i] = new Dog();
@@ -79,11 +79,20 @@ int main(void)
 			}
 		}
 
-		std::cout << "/*********** Destructor Mensages ***********/" << std::endl << std::endl;
+		msg("Setting Cat ideas.");
+		for (int i = 0; i < 100; i++) {
+			if (listAnimals[i]->getType() == "Dog") {
+				
+			}
+		}
 
+		msg("Setting Dog ideas.");
+
+		msg("Cats and Dogs go to sleep.");
 		for (int i = 0; i < 10; i++){
 			delete listAnimals[i];
 			std::cout << std::endl;
 		}
+	}
 	return (0);
 }
