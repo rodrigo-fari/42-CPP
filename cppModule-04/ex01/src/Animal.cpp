@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:58:44 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 23:11:56 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:34:17 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ std::string Animal::getType() const
 void msg(std::string msg)
 {
 	std::cout << std::endl
-			  << "===== "
-			  << msg
-			  << " ====="
-			  << std::endl
-			  << std::endl;
+			<< "    ℹ️  "
+			<< msg
+			<< "  ℹ️"
+			<< std::endl
+			<< std::endl;
 }

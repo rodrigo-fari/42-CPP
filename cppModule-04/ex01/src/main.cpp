@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:32:34 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 23:17:03 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:40:41 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,94 @@ int main(void)
 
 		msg("End fo Scope");
 	}
-	std::cout << "=============================================================| SCOPE 3 (DeepCopy)" << std::endl;
+	std::cout << "=============================================================| SCOPE 3 (Shallow Copy)" << std::endl;
 	{
 		std::cout
-			<< "\n\nFor simplicity, will only work with the ideas[0].\n"
+			<< "\n\nFor simplicity, I'll only work with the ideas index '0'.\n"
 			<< "This can be changed later during the evaluation if\n"
-			<< "the evaluator want.\n\n";
+			<< "the evaluator think it's needed.\n\n";
+
+		msg("Creating shallowCat");
+		Cat* shallowCat = new Cat;
+
+		msg("Setting shallowCat Ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	shallowCat->getBrain()->setIdea(i, "Main cat ideas.");
+		// }
+		shallowCat->getBrain()->setIdea(0, "Main cat ideas.");
+		std::cout << "Idea set successfully\n";
+
+		msg("Checking shallowCat Ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	std::cout << "[Index: " << i << " ] = "
+		// 	<< shallowCat->getBrain()->getIdea(i)
+		// 	<< "\n";
+		// }
+		std::cout << "[Index: " << 0 << " ] = "
+			<< shallowCat->getBrain()->getIdea(0)
+			<< "\n";
+
+		msg("Creating shallowCatTest");
+		Cat* shallowCatTest= shallowCat;
+
+		msg("Checking shallowCatTest ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	std::cout << "[Index: " << i << " ] = "
+		// 	<< shallowCatTest->getBrain()->getIdea(i)
+		// 	<< "\n";
+		// }
+		std::cout << "[Index: " << 0 << " ] = "
+			<< shallowCatTest->getBrain()->getIdea(0)
+			<< "\n";
+		
+		msg("Changing shallowCatTest ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	shallowCatTest->getBrain()->setIdea(i, "Main cat ideas.");
+		// }
+		shallowCatTest->getBrain()->setIdea(0, "New cat ideas.");
+		std::cout << "Idea changed successfully\n";
+
+		msg("Checking new shallowCatTest ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	std::cout << "[Index: " << i << " ] = "
+		// 	<< shallowCatTest->getBrain()->getIdea(i)
+		// 	<< "\n";
+		// }
+		std::cout << "[Index: " << 0 << " ] = "
+			<< shallowCatTest->getBrain()->getIdea(0)
+			<< "\n";
+
+		msg("Checking original shallowCat Ideas");
+		// for (int i = 0; i < 10; i++) {
+		// 	std::cout << "[Index: " << i << " ] = "
+		// 	<< shallowCat->getBrain()->getIdea(i)
+		// 	<< "\n";
+		// }
+		std::cout << "[Index: " << 0 << " ] = "
+			<< shallowCat->getBrain()->getIdea(0)
+			<< "\n";
+
+		msg("Shallow cats go to sleep");
+		delete shallowCat;
+		//delete shallowCatTest; // <-- No need to free once they share the same pointer reference.
+	}
+
+
+	std::cout << "=============================================================| SCOPE 4 (Deep Copy)" << std::endl;
+	{
+		std::cout
+			<< "\n\nFor simplicity, I'll only work with the ideas index '0'.\n"
+			<< "This can be changed later during the evaluation if\n"
+			<< "the evaluator think it's needed.\n\n";
 
 		msg("Creating deepCat");
 		Cat* deepCat = new Cat;
 
 		msg("Setting deepCat Ideas");
 		// for (int i = 0; i < 10; i++) {
-		// 	deepCat->getBrain()->setIdea(i, "Funny cat ideas.");
+		// 	deepCat->getBrain()->setIdea(i, "Main cat ideas.");
 		// }
-		deepCat->getBrain()->setIdea(0, "Funny cat ideas.");
+		deepCat->getBrain()->setIdea(0, "Main cat ideas.");
 		std::cout << "Idea set successfully\n";
 
 		msg("Checking deepCat Ideas");
@@ -90,7 +163,7 @@ int main(void)
 			<< "\n";
 
 		msg("Creating deepCatTest");
-		Cat* deepCatTest = deepCat;
+		Cat* deepCatTest = new Cat(*deepCat);
 
 		msg("Checking deepCatTest ideas");
 		// for (int i = 0; i < 10; i++) {
@@ -104,10 +177,10 @@ int main(void)
 		
 		msg("Changing deepCatTest ideas");
 		// for (int i = 0; i < 10; i++) {
-		// 	deepCatTest->getBrain()->setIdea(i, "Funny cat ideas.");
+		// 	deepCatTest->getBrain()->setIdea(i, "Main cat ideas.");
 		// }
-		deepCatTest->getBrain()->setIdea(0, "Angry cat ideas.");
-		std::cout << "Idea changed successfully\n";
+		deepCatTest->getBrain()->setIdea(0, "New cat ideas.");
+		std::cout << "Idea changed successfully.\n";
 
 		msg("Checking new deepCatTest ideas");
 		// for (int i = 0; i < 10; i++) {
@@ -129,82 +202,9 @@ int main(void)
 			<< deepCat->getBrain()->getIdea(0)
 			<< "\n";
 
-		msg("Cats go to sleep");
+		msg("Deep cats go to sleep.");
 		delete deepCat;
-		//delete deepCatTest; //! <-- This pointer somehow is linked to the deepCat one...
-	}
-
-
-	std::cout << "=============================================================| SCOPE 4 (Shallow Copy)" << std::endl;
-	{
-		std::cout
-			<< "\n\nFor simplicity, will only work with the ideas[0].\n"
-			<< "This can be changed later during the evaluation if\n"
-			<< "the evaluator want.\n\n";
-
-		msg("Creating shallowCat");
-		Cat* shallowCat = new Cat;
-
-		msg("Setting shallowCat Ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	shallowCat->getBrain()->setIdea(i, "Funny cat ideas.");
-		// }
-		shallowCat->getBrain()->setIdea(0, "Funny cat ideas.");
-		std::cout << "Idea set successfully\n";
-
-		msg("Checking shallowCat Ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< shallowCat->getBrain()->getIdea(i)
-		// 	<< "\n";
-		// }
-		std::cout << "[Index: " << 0 << " ] = "
-			<< shallowCat->getBrain()->getIdea(0)
-			<< "\n";
-
-		msg("Creating AACATTest");
-		Cat* AACATTest = new Cat(*shallowCat);
-
-		msg("Checking AACATTest ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< AACATTest->getBrain()->getIdea(i)
-		// 	<< "\n";
-		// }
-		std::cout << "[Index: " << 0 << " ] = "
-			<< AACATTest->getBrain()->getIdea(0)
-			<< "\n";
-		
-		msg("Changing AACATTest ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	AACATTest->getBrain()->setIdea(i, "Funny cat ideas.");
-		// }
-		AACATTest->getBrain()->setIdea(0, "Angry cat ideas.");
-		std::cout << "Idea changed successfully.\n";
-
-		msg("Checking new AACATTest ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< AACATTest->getBrain()->getIdea(i)
-		// 	<< "\n";
-		// }
-		std::cout << "[Index: " << 0 << " ] = "
-			<< AACATTest->getBrain()->getIdea(0)
-			<< "\n";
-
-		msg("Checking original shallowCat Ideas");
-		// for (int i = 0; i < 10; i++) {
-		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< shallowCat->getBrain()->getIdea(i)
-		// 	<< "\n";
-		// }
-		std::cout << "[Index: " << 0 << " ] = "
-			<< shallowCat->getBrain()->getIdea(0)
-			<< "\n";
-
-		msg("Shallow cats go to sleep.");
-		delete shallowCat;
-		//delete AACATTest; // <-- No need to delete this once they share the same pointer reference!
+		delete deepCatTest;
 
 		msg("End of Scope");
 	}
