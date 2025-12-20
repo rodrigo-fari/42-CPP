@@ -20,7 +20,7 @@ Dog::Dog() : Animal() {
 
 Dog::~Dog() {
 	delete(this->_brain);
-	std::cout << "🐕: Dog default destructor called." << std::endl;
+	std::cout << "🐕: Dog destructor called." << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal() {
@@ -41,4 +41,8 @@ Dog& Dog::operator=(const Dog& other) {
 
 void	Dog::makeSound() const {
 	std::cout << "🐕: Oof Oof - (Doggy sounds)." << std::endl;
+}
+
+Brain* Dog::getBrain() const {
+	return this->_brain;
 }
