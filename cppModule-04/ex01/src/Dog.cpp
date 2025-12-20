@@ -20,7 +20,7 @@ Dog::Dog() : Animal() {
 
 Dog::~Dog() {
 	delete this->_brain;
-	std::cout << "🐕: Dog default destructor called." << std::endl;
+	std::cout << "🐕: Dog destructor called." << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal() {

@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:32:34 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/19 19:38:04 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 19:41:20 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,31 +65,21 @@ int main(void)
 		std::cout << "=============================================================| SCOPE 3" << std::endl;
 	{
 
-		const Animal *listAnimals[10];
+		const Animal *listAnimals[100];
 
 		msg("Creation of Cats and Dogs.");
-		for (int i = 0; i < 10; i++){
-			if (i < 5){
-				listAnimals[i] = new Dog();
-				std::cout << std::endl;
-			}
-			else{
-				listAnimals[i] = new Cat();
-				std::cout << std::endl;
+		for (int i = 0; i < 100; i++){
+			std::cout << "[ " << i + 1 << " ] " << std::endl;
+			if (i < 50) {
+				listAnimals[i] = new Dog;
+			} else {
+				listAnimals[i] = new Cat;
 			}
 		}
-
-		msg("Setting Cat ideas.");
-		for (int i = 0; i < 100; i++) {
-			if (listAnimals[i]->getType() == "Dog") {
-				
-			}
-		}
-
-		msg("Setting Dog ideas.");
 
 		msg("Cats and Dogs go to sleep.");
-		for (int i = 0; i < 10; i++){
+		for (int i = 0; i < 100; i++){
+			std::cout << "[ " << i + 1 << " ] " << std::endl;
 			delete listAnimals[i];
 			std::cout << std::endl;
 		}
