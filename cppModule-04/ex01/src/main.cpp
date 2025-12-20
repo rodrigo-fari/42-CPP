@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:32:34 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 22:59:37 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:17:03 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,34 +162,34 @@ int main(void)
 			<< shallowCat->getBrain()->getIdea(0)
 			<< "\n";
 
-		msg("Creating shallowCatTest");
-		Cat* shallowCatTest = new Cat(*shallowCat);
+		msg("Creating AACATTest");
+		Cat* AACATTest = new Cat(*shallowCat);
 
-		msg("Checking shallowCatTest ideas");
+		msg("Checking AACATTest ideas");
 		// for (int i = 0; i < 10; i++) {
 		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< shallowCatTest->getBrain()->getIdea(i)
+		// 	<< AACATTest->getBrain()->getIdea(i)
 		// 	<< "\n";
 		// }
 		std::cout << "[Index: " << 0 << " ] = "
-			<< shallowCatTest->getBrain()->getIdea(0)
+			<< AACATTest->getBrain()->getIdea(0)
 			<< "\n";
 		
-		msg("Changing shallowCatTest ideas");
+		msg("Changing AACATTest ideas");
 		// for (int i = 0; i < 10; i++) {
-		// 	shallowCatTest->getBrain()->setIdea(i, "Funny cat ideas.");
+		// 	AACATTest->getBrain()->setIdea(i, "Funny cat ideas.");
 		// }
-		shallowCatTest->getBrain()->setIdea(0, "Angry cat ideas.");
+		AACATTest->getBrain()->setIdea(0, "Angry cat ideas.");
 		std::cout << "Idea changed successfully.\n";
 
-		msg("Checking new shallowCatTest ideas");
+		msg("Checking new AACATTest ideas");
 		// for (int i = 0; i < 10; i++) {
 		// 	std::cout << "[Index: " << i << " ] = "
-		// 	<< shallowCatTest->getBrain()->getIdea(i)
+		// 	<< AACATTest->getBrain()->getIdea(i)
 		// 	<< "\n";
 		// }
 		std::cout << "[Index: " << 0 << " ] = "
-			<< shallowCatTest->getBrain()->getIdea(0)
+			<< AACATTest->getBrain()->getIdea(0)
 			<< "\n";
 
 		msg("Checking original shallowCat Ideas");
@@ -204,7 +204,7 @@ int main(void)
 
 		msg("Shallow cats go to sleep.");
 		delete shallowCat;
-		//delete shallowCatTest; //! <-- This pointer is linked with the previous one (shallow cat).
+		//delete AACATTest; // <-- No need to delete this once they share the same pointer reference!
 
 		msg("End of Scope");
 	}

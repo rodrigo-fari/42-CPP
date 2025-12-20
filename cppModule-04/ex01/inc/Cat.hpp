@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:45:47 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 22:22:52 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:11:03 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Cat();
 	~Cat();
-	Cat(const Cat &other);
+	Cat(const Cat &main);
 	Cat &operator=(const Cat &other);
 
 	void makeSound() const;

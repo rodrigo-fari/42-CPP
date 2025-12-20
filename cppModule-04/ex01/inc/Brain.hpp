@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 20:22:27 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 22:24:00 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:10:55 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Brain {
 		std::string _ideas[100];
 	public:
 		Brain();
-		Brain(const Brain& other);
+		Brain(const Brain& main);
 		~Brain();
 		Brain& operator=(const Brain& other);
 

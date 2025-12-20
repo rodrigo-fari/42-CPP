@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:58:44 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/13 20:16:45 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:12:18 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ WrongAnimal::WrongAnimal()
 	this->_type = "General WrongAnimal";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other)
+WrongAnimal::WrongAnimal(const WrongAnimal &main)
 {
 	std::cout << "⭕🐾: WrongAnimal copy constructor called." << std::endl;
-	this->_type = other._type;
+	this->_type = main._type;
 }
 
 WrongAnimal::~WrongAnimal()

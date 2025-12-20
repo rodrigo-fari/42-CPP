@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:45:47 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 19:41:37 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:11:36 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
 		~WrongCat();
-		WrongCat(const WrongCat& other);
+		WrongCat(const WrongCat& main);
 		WrongCat& operator=(const WrongCat& other);
 
 		void makeSound() const;

@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:50:45 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/13 20:16:58 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:14:02 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ WrongCat::~WrongCat() {
 	std::cout << "⭕🐈: WrongCat default destructor called." << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other) : WrongAnimal() {
+WrongCat::WrongCat(const WrongCat &main) : WrongAnimal(main) {
 	std::cout << "⭕🐈: WrongCat copy operator called." << std::endl;
-	this->_type = other._type;
+	this->_type = main._type;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &other)

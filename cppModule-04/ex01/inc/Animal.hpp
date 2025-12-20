@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:47:20 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 15:51:09 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:10:49 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal {
 
 	public:
 		Animal();
-		Animal(const Animal &other);
+		Animal(const Animal &main);
 		virtual ~Animal();
 		virtual void makeSound() const;
 		Animal&	operator=( const Animal& other );

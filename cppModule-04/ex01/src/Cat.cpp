@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:50:45 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 22:45:28 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:16:16 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ Cat::~Cat() {
 	std::cout << "🐈: Cat destructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal() {
+Cat::Cat(const Cat& main) : Animal(main) {
 	std::cout << "🐈: Cat copy operator called." << std::endl;
-	this->_type = other._type;
-	this->_brain = other._brain;
+	this->_type = main._type;
+	this->_brain = new Brain(*main._brain);
 }
 
 Cat &Cat::operator=(const Cat &other)

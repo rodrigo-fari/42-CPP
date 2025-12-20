@@ -23,10 +23,10 @@ Dog::~Dog() {
 	std::cout << "🐕: Dog destructor called." << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal() {
-	std::cout << "🐕: Dog copy operator called." << std::endl;
-	this->_type = other._type;
-	this->_brain = other._brain;
+Dog::Dog(const Dog& main) : Animal(main) {
+	std::cout << "🐕: Dog copy constructor called." << std::endl;
+	this->_type = main._type;
+	this->_brain = new Brain(*main._brain);
 }
 
 Dog& Dog::operator=(const Dog& other) {

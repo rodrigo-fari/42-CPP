@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:58:44 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 20:25:15 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 23:11:56 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ Animal::Animal()
 	this->_type = "General Animal";
 }
 
-Animal::Animal(const Animal &other)
+Animal::Animal(const Animal &main)
 {
 	std::cout << "🐾: Animal copy constructor called." << std::endl;
-	this->_type = other._type;
+	this->_type = main._type;
 }
 
 Animal::~Animal()
