@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 20:47:20 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/12 15:51:09 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 20:45:31 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Animal {
 		Animal&	operator=( const Animal& other );
 
 		std::string getType() const;
+		virtual std::string getIdea(int index);
+		virtual void setIdea(int index, const std::string &idea);
 };
 
 void	msg( std::string msg );

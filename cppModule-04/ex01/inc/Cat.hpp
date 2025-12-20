@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:45:47 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/19 19:47:39 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 20:20:54 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Cat : public Animal {
 		Cat& operator=(const Cat& other);
 
 		void makeSound() const;
+		std::string getIdea(int index);
+		void setIdea(int index, const std::string &idea);
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:50:45 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 19:43:00 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 20:20:21 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,12 @@ Cat &Cat::operator=(const Cat &other)
 
 void Cat::makeSound() const {
 	std::cout << "🐈: Miau - (Kitty sounds)." << std::endl;
+}
+
+std::string Cat::getIdea(int index) {
+	return (this->_brain->getIdea(index));
+}
+
+void Cat::setIdea(int index, const std::string &idea) {
+	this->_brain->setIdea(index, idea);
 }
