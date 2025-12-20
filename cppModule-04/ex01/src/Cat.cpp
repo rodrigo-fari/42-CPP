@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:50:45 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 19:43:00 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/19 19:49:14 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Cat::Cat() : Animal() {
 
 Cat::~Cat() {
 	delete this->_brain;
-	std::cout << "🐈: Cat destructor called." << std::endl;
+	std::cout << "🐈: Cat default destructor called." << std::endl;
 }
 
 Cat::Cat(const Cat& other) : Animal() {
