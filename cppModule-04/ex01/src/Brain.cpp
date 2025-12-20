@@ -6,57 +6,31 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 20:22:40 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 20:17:36 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/20 19:43:55 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-Brain::Brain()
-{
+Brain::Brain() {
 	std::cout << "🧠: Brain default constructor called." << std::endl;
 }
 
-Brain::Brain(const Brain &other)
-{
+Brain::Brain( const Brain& other) {
 	std::cout << "🧠: Brain copy constructor called." << std::endl;
 	this->_ideas[100] = other._ideas[100];
 }
 
-Brain::~Brain()
-{
+Brain::~Brain() {
 	std::cout << "🧠: Brain destructor called." << std::endl;
 }
 
-Brain &Brain::operator=(const Brain &other)
-{
-	if (this != &other)
-	{
-		for (int i = 0; i < 100; i++)
-		{
+Brain& Brain::operator=(const Brain& other) {
+	if (this != &other) {
+		for (int i = 0; i < 100; i++) {
 			this->_ideas[i] = other._ideas[i];
 		};
 	}
 	return (*this);
-}
-
-std::string Brain::getIdea(int index) const
-{
-	if (index < 0 || index >= 100)
-	{
-		std::cout << "⚠️  Index out of bounds!" << std::endl;
-		return ("");
-	}
-	return (this->_ideas[index]);
-}
-
-void Brain::setIdea(int index, const std::string &idea)
-{
-	if (index < 0 || index >= 100)
-	{
-		std::cout << "⚠️  Index out of bounds!" << std::endl;
-		return;
-	}
-	this->_ideas[index] = idea;
 }
