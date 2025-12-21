@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 22:32:34 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/21 02:13:56 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/21 17:27:26 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int main(void) {
 				  << "\n";
 
 		msg("Creating shallowCatTest");
-		Cat *shallowCatTest = shallowCat;
+		Cat *shallowCatTest;
+		shallowCatTest = shallowCat;
 
 		msg("Checking shallowCatTest ideas");
 		// for (int i = 0; i < 10; i++) {
@@ -116,9 +117,8 @@ int main(void) {
 				  << deepCat->getBrain()->getIdea(0)
 				  << "\n";
 
-		msg("Creating deepCatTest using operator=");
-		Cat *deepCatTest = new Cat();
-		*deepCatTest = *deepCat;
+		msg("Creating deepCatTest");
+		Cat *deepCatTest = new Cat(*deepCat);
 
 		msg("Checking deepCatTest ideas");
 		// for (int i = 0; i < 10; i++) {
