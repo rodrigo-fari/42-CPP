@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 21:58:44 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/20 23:34:17 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/21 17:10:45 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ Animal &Animal::operator=(const Animal &other)
 		this->_type = other._type;
 	}
 	return (*this);
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "🐾: *Default animal sound.*" << std::endl;
 }
 
 std::string Animal::getType() const
