@@ -45,10 +45,15 @@ int main(void)
 		sep("SCAV TEST");
 		ClapTrap clap1;
 		ScavTrap scav1("scav1");
+		std::cout << std::endl;
 		clap1.setName("Clap1");
 		clap1.setHitPoints(1);
 		scav1.attack(clap1.getName());
+		std::cout << std::endl;
 		clap1.takeDamage(scav1.getAttackDamage());
-		return 0;
+		std::cout << std::endl;
+		scav1.guardGate();
+		std::cout << std::endl;
 	}
+	return 0;
 }

@@ -1,5 +1,5 @@
 MAKEFLAGS += -s
-NAME = 01
+NAME = ex01
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp

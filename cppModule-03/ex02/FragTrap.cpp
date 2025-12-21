@@ -43,16 +43,16 @@ FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "FragTrap default constructor called." << std::endl;
 	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setEnergyPoints(100);
+	this->setAttackDamage(30);
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap parameter constructor called." << std::endl;
 	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->setEnergyPoints(100);
+	this->setAttackDamage(30);
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
@@ -62,6 +62,7 @@ FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
+	std::cout << "FragTrap copy assignment operator called." << std::endl;
 	if (this != &other)
 		ClapTrap::operator=(other);
 	return (*this);
@@ -75,7 +76,7 @@ FragTrap::~FragTrap()
 void FragTrap::highFiveGuys( void )
 {
 	std::cout << "FragTrap " << this->getName()
-		<< "is about to make a positive high-five request..." << std::endl;
+		<< " is about to make a positive high-five request..." << std::endl;
 }
 
 void FragTrap::attack(const std::string &target)
