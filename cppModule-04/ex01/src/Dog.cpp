@@ -14,7 +14,7 @@
 
 Dog::Dog() : Animal() {
 	this->_type = "Dog";
-	this->_brain = new(Brain);
+	this->_brain = new Brain;
 	std::cout << "🐕: Dog default constructor called." << std::endl;
 }
 
@@ -43,6 +43,6 @@ void	Dog::makeSound() const {
 	std::cout << "🐕: Oof Oof - (Doggy sounds)." << std::endl;
 }
 
-Brain* Dog::getBrain() const {
-	return this->_brain;
+Brain& Dog::getBrain() const {
+	return *this->_brain;
 }
