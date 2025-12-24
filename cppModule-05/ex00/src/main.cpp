@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 03:10:32 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/24 03:15:54 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/24 22:18:42 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void pf(std::string msg, std::string color) {
 		OUT << msg;
 	}
 }
-
-
 
 int main () {
 	pf("HelloWorld", NA);
