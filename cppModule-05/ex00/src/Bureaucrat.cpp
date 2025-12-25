@@ -6,20 +6,29 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/24 22:55:26 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/25 02:20:25 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
+//Default constructor
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(10) {
 	OUT << "🎩: Default constructor called." << NL;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& original) : _name(original._name), _grade(original._grade) {
-	OUT << "🎩: Copy constructor called." << NL;
+//Param constructor
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
+	OUT << "🎩: Param constructor called." << NL;
+	setGrade(grade);
 }
 
+//Copy operator
+Bureaucrat::Bureaucrat(const Bureaucrat& original) : _name(original._name), _grade(original._grade) {
+	OUT << "🎩: Copy operator called." << NL;
+}
+
+//Copy assignment operator
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
 	OUT << "🎩: Copy assignment operator called." << NL;
 	if (this != &rhs) {
@@ -28,42 +37,64 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
 	return (*this);
 }
 
+//Destructor
 Bureaucrat::~Bureaucrat() {
 	OUT << "🎩: Destructor called" << NL;
 }
 
-const std::string Bureaucrat::getName() {
+//Getters
+const std::string Bureaucrat::getName() const{
 	return (this->_name);
 }
 
-void Bureaucrat::setGrade(int grade) {
-	this->_grade = grade;
+int Bureaucrat::getGrade() const{
+	return (this->_grade);
 }
 
-void Bureaucrat::increaseGrate() {
+//Setters
+void Bureaucrat::setGrade(int grade) {
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	else {
+		OUT << "Setting " << BLUE
+		<< this->getName() << RESET
+		<< " grade to " << YELLOW
+		<< grade << RESET << NL;
+		this->_grade = grade;
+	}
+}
+
+//Controllers
+void Bureaucrat::increaseGrade() {
+	OUT << "Increasing " << BLUE << this->getName() << RESET << " grade." << NL;
 	if (this->_grade > 1) {
-		this->_grade = this->_grade--;
+		this->_grade--;
 	} else {
 		throw GradeTooHighException();
 	}
 }
 
-void Bureaucrat::decreaseGrate() {
+void Bureaucrat::decreaseGrade() {
+	OUT << "Decreasing " << BLUE << this->getName() << RESET << " grade." << NL;
 	if (this->_grade < 150) {
-		this->_grade = this->_grade++;
+		this->_grade++;
 	} else {
 		throw GradeTooLowException();
 	}
 }
 
-const char* GradeTooLowException::what() const throw() {
+//Own exceptions
+const char* Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Error: Grade is too low!");
 }
 
-const char* GradeTooHighException::what() const throw() {
+const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Error:Grade is too high!");
 }
 
-std::string errorMessage() {
-	
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat) {
+	out << GREEN << bureaucrat.getName() << ", Bureaucrat grade " << bureaucrat.getGrade() << RESET;
+	return (out);
 }

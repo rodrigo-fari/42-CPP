@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/12/24 22:55:17 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/12/25 01:59:50 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # define OUT std::cout
 # define NL std::endl
+# define STRING std::string
 # define NA ""
 
 class Bureaucrat {
@@ -32,32 +33,33 @@ class Bureaucrat {
 	public:
 		//OCF
 		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat& original);
 		Bureaucrat& operator=(const Bureaucrat& rhs);
 		~Bureaucrat();
 
 		//Getters
-		const std::string getName();
-		int getGrade();
+		const std::string getName() const;
+		int getGrade() const;
 
 		//Setters
 		void setGrade(int grade);
 
-		void increaseGrate();
-		void decreaseGrate();
-};
+		//Controllers
+		void increaseGrade();
+		void decreaseGrade();
+		
+		class GradeTooHighException : public std::exception {
+			public:
+			virtual const char* what() const throw();
+		};
+		
+		class GradeTooLowException : public std::exception {
+			public:
+			virtual const char* what() const throw();
+		};
 
-class GradeTooHighException : public std::exception {
-	public:
-	virtual const char* what() const throw();
 };
-
-class GradeTooLowException : public std::exception {
-	public:
-	virtual const char* what() const throw();
-};
-
-std::string errorMessage();
 
 //Operator Overload
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
