@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 09:20:09 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 11:55:40 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/10 22:16:08 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ Form& Form::operator=(const Form& rhs)
 	{
 		this->_signed = rhs._signed;
 	}
+	return (*this);
 }
 
 Form::~Form()
@@ -73,32 +74,32 @@ int Form::getGradeToExec() const
 void	Form::beSigned(const Bureaucrat& bcrat)
 {
 	if (bcrat.getGrade() > this->getGradeToSign())
-	{
-		COUT << bcrat.getName() << " couldn’t sign " << this->getName()
-			<< " because grade is too low" << ENDL;
 		throw GradeTooLowException();
-	}
-	COUT << bcrat.getName() << " signed " << this->getName() << ENDL;
+	COUT << GREEN << bcrat.getName() << " signed " << this->getName() << RESET << ENDL;
 	this->_signed = true;
 }
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return ("Error: Grade is too low!");
+	return ("grade is too low!");
 }
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return ("Error: Grade is too high!");
+	return ("grade is too high!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Form& form)
-{
-	out << "====== Form's info ======"<< ENDL
+{	
+	out << YELLOW
+		<< ENDL
+		<< "====== Form's info ======"<< ENDL
 		<< "Name: " << form.getName() << ENDL
-		<< "Is signed: " << form.getSigned() << ENDL
+		<< "Is signed: " << (form.getSigned() ? "TRUE" : "FALSE") << ENDL
 		<< "Minimum grade to sign: " << form.getGradeToSign() << ENDL
 		<< "Minimum grade to execute: " << form.getGradeToExec() << ENDL
-		<< "=========================" << ENDL;
+		<< "========================="
+		<< RESET
+		<< ENDL;
 	return (out);
 }

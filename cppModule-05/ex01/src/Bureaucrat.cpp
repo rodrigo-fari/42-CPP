@@ -6,12 +6,12 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 11:33:29 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/10 22:15:34 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 // Orthodox Canonical Form
 
@@ -84,6 +84,21 @@ void Bureaucrat::decreaseGrade()
 	if (_grade >= 150)
 		throw GradeTooLowException();
 	_grade++;
+}
+
+void Bureaucrat::signForm(Form &form) const {
+	try {
+		form.beSigned(*this);
+	} catch (std::exception &e) {
+		COUT << RED 
+			<< getName()
+			<< " couldn't sign "
+			<< form.getName()
+			<< " because "
+			<< e.what()
+			<< RESET
+			<< ENDL;
+	}
 }
 
 // Exception implementations

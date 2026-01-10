@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 10:27:10 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/10 19:25:14 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ public:
 	// Member functions
 	void increaseGrade();
 	void decreaseGrade();
-	void signForm(Form &form);
+	void signForm(Form &form) const;
 
 	// Exceptions
 	class GradeTooHighException : public std::exception
