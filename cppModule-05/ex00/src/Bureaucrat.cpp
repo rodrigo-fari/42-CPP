@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/08 14:01:02 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/10 10:27:10 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 // Default constructor
 Bureaucrat::Bureaucrat() : _name("Default"), _grade(10)
 {
-	OUT << "🎩: Default constructor called." << NL;
+	COUT << "🎩: Default constructor called." << ENDL;
 }
 
 // Param constructor
 Bureaucrat::Bureaucrat(std::string name, int grade)
 	: _name(name), _grade(grade)
 {
-	OUT << "🎩: Param constructor called." << NL;
+	COUT << "🎩: Param constructor called." << ENDL;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
@@ -30,16 +30,16 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 }
 
 // Copy constructor
-Bureaucrat::Bureaucrat(const Bureaucrat& original)
+Bureaucrat::Bureaucrat(const Bureaucrat &original)
 	: _name(original._name), _grade(original._grade)
 {
-	OUT << "🎩: Copy constructor called." << NL;
+	COUT << "🎩: Copy constructor called." << ENDL;
 }
 
 // Copy assignment operator
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
 {
-	OUT << "🎩: Copy assignment operator called." << NL;
+	COUT << "🎩: Copy assignment operator called." << ENDL;
 	if (this != &rhs)
 		_grade = rhs._grade;
 	return (*this);
@@ -48,7 +48,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs)
 // Destructor
 Bureaucrat::~Bureaucrat()
 {
-	OUT << "🎩: Destructor called" << NL;
+	COUT << "🎩: Destructor called" << ENDL;
 }
 
 // Getters
@@ -65,7 +65,7 @@ int Bureaucrat::getGrade() const
 // Member functions
 void Bureaucrat::increaseGrade()
 {
-	OUT << "Increasing " << BLUE << getName() << RESET << " grade." << NL;
+	COUT << "Increasing " << BLUE << getName() << RESET << " grade." << ENDL;
 	if (_grade <= 1)
 		throw GradeTooHighException();
 	_grade--;
@@ -73,25 +73,25 @@ void Bureaucrat::increaseGrade()
 
 void Bureaucrat::decreaseGrade()
 {
-	OUT << "Decreasing " << BLUE << getName() << RESET << " grade." << NL;
+	COUT << "Decreasing " << BLUE << getName() << RESET << " grade." << ENDL;
 	if (_grade >= 150)
 		throw GradeTooLowException();
 	_grade++;
 }
 
 // Exception implementations
-const char* Bureaucrat::GradeTooLowException::what() const throw()
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Error: Grade is too low!");
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Error: Grade is too high!");
 }
 
 // Operator overload
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
 	out << GREEN << bureaucrat.getName() << ", bureaucrat grade "
 		<< bureaucrat.getGrade() << RESET;

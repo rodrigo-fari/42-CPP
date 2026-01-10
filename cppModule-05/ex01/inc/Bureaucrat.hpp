@@ -6,65 +6,66 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/08 15:45:50 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/10 10:27:10 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
-# include <iostream>
-# include <fstream>
-# include <string>
-# include <cctype>
-# include <exception>
-# include "Colors.hpp"
-# include "Form.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cctype>
+#include <exception>
+#include "Colors.hpp"
 
-# define OUT std::cout
-# define NL std::endl
-# define STRING std::string
-# define NA ""
+#define COUT std::cout
+#define ENDL std::endl
+#define STRING std::string
+#define NA ""
+
+class Form;
 
 class Bureaucrat
 {
-	private:
-		std::string const	_name;
-		int					_grade;
+private:
+	std::string const _name;
+	int _grade;
 
+public:
+	// Orthodox Canonical Form
+	Bureaucrat();
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat &original);
+	Bureaucrat &operator=(const Bureaucrat &rhs);
+	~Bureaucrat();
+
+	// Getters
+	const std::string getName() const;
+	int getGrade() const;
+
+	// Member functions
+	void increaseGrade();
+	void decreaseGrade();
+	void signForm(Form &form);
+
+	// Exceptions
+	class GradeTooHighException : public std::exception
+	{
 	public:
-		// Orthodox Canonical Form
-		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
-		Bureaucrat(const Bureaucrat& original);
-		Bureaucrat& operator=(const Bureaucrat& rhs);
-		~Bureaucrat();
+		virtual const char *what() const throw();
+	};
 
-		// Getters
-		const std::string	getName() const;
-		int					getGrade() const;
-
-		// Member functions
-		void	increaseGrade();
-		void	decreaseGrade();
-		void	signForm();
-		
-		// Exceptions
-		class GradeTooHighException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		};
-		
-		class GradeTooLowException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		};
+	class GradeTooLowException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
 };
 
 // Operator overload
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat);
 
 #endif
