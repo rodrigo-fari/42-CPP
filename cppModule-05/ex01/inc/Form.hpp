@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:31:52 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 11:40:17 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/11 07:39:41 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include <exception>
+#include <cstdlib>
+#include <ctime>
 
 class Bureaucrat;
 

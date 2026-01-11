@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 19:25:14 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/01/11 07:40:09 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,39 +29,39 @@ class Form;
 
 class Bureaucrat
 {
-private:
-	std::string const _name;
-	int _grade;
+	private:
+		std::string const _name;
+		int _grade;
 
-public:
-	// Orthodox Canonical Form
-	Bureaucrat();
-	Bureaucrat(std::string name, int grade);
-	Bureaucrat(const Bureaucrat &original);
-	Bureaucrat &operator=(const Bureaucrat &rhs);
-	~Bureaucrat();
-
-	// Getters
-	const std::string getName() const;
-	int getGrade() const;
-
-	// Member functions
-	void increaseGrade();
-	void decreaseGrade();
-	void signForm(Form &form) const;
-
-	// Exceptions
-	class GradeTooHighException : public std::exception
-	{
 	public:
-		virtual const char *what() const throw();
-	};
+		// Orthodox Canonical Form
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &original);
+		Bureaucrat &operator=(const Bureaucrat &rhs);
+		~Bureaucrat();
 
-	class GradeTooLowException : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
+		// Getters
+		const std::string getName() const;
+		int getGrade() const;
+
+		// Member functions
+		void increaseGrade();
+		void decreaseGrade();
+		void signForm(Form &form) const;
+
+		// Exceptions
+		class GradeTooHighException : public std::exception
+		{
+		public:
+			virtual const char *what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+		public:
+			virtual const char *what() const throw();
+		};
 };
 
 // Operator overload
