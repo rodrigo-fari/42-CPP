@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:11 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/11 07:40:09 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:15:09 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ class Bureaucrat
 		// Exceptions
 		class GradeTooHighException : public std::exception
 		{
-		public:
-			virtual const char *what() const throw();
+			public:
+				virtual const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-		public:
-			virtual const char *what() const throw();
+			public:
+				virtual const char *what() const throw();
 		};
 };
 

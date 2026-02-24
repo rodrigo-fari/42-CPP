@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:31:52 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/11 07:39:41 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:17:10 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,20 @@ public:
 	// Exceptions
 	class GradeTooHighException : public std::exception
 	{
-	public:
-		virtual const char *what() const throw();
+		public:
+			virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-	public:
-		virtual const char *what() const throw();
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class FormAlreadySignedException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
 	};
 };
 

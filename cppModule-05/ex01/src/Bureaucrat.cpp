@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 01:43:15 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 22:15:34 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:14:41 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return ("Error: Grade is too high!");
 }
+
 
 // Operator overload
 
