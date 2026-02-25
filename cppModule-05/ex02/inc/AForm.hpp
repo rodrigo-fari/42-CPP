@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AAForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:31:52 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/01/10 11:40:17 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:46:21 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include <iostream>
 #include <string>
 #include <exception>
+#include <cstdlib>
+#include <ctime>
+#include "Colors.hpp"
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
 	const std::string _name;
@@ -27,12 +32,12 @@ private:
 	const int _gradeToExec;
 
 public:
-	// Orthodox Canonical Form
-	Form();
-	Form(std::string name, int gradeToSign, int gradeToExec);
-	Form(const Form& original);
-	Form &operator=(const Form &rhs);
-	~Form();
+	// Orthodox Canonical AForm
+	AForm();
+	AForm(std::string name, int gradeToSign, int gradeToExec);
+	AForm(const AForm& original);
+	AForm &operator=(const AForm &rhs);
+	~AForm();
 
 	// Getters
 	std::string getName() const;
@@ -42,22 +47,37 @@ public:
 
 	// Member function
 	void beSigned(const Bureaucrat& bcrat);
+	void execute(const Bureaucrat& executor) const;
+	virtual void executeAction() const = 0;
 
 	// Exceptions
 	class GradeTooHighException : public std::exception
 	{
-	public:
-		virtual const char *what() const throw();
+		public:
+			virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-	public:
-		virtual const char *what() const throw();
+		public:
+			virtual const char *what() const throw();
 	};
+
+	class FormAlreadySignedException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
+	class FormNotSignedYetException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw();
+	};
+
 };
 
 // Operator overload
-std::ostream &operator<<(std::ostream &out, const Form &form);
+std::ostream &operator<<(std::ostream &out, const AForm &form);
 
 #endif
