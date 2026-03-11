@@ -6,7 +6,38 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 21:23:13 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/02/26 21:23:14 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/03/11 13:33:03 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+
+#include <string>
+#include <iostream>
+#include <cctype>
+#include <sstream>
+#include <cstdlib>
+
+#define NON_PRINTABLE "Unable to print."
+#define NON_CONVERTABLE "Unable to convert."
+#define OVER_BOUNDAERIES "Number out of boundaries."
+
+struct OutputData
+{
+	std::string	chr;
+	std::string	nbr;
+	std::string	flt;
+	std::string	dbl;
+};
+
+class ScalarConverter 
+{
+	private:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter& other);
+		ScalarConverter& operator=(const ScalarConverter& other);
+		~ScalarConverter();
+	public:
+		static void convert(std::string& inputString);
+};
 
