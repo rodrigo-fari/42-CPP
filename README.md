@@ -4,7 +4,7 @@
     <img src="https://capsule-render.vercel.app/api?type=waving&color=4fa69a&height=300&section=header&text=C%2B%2B%20+Modules&fontSize=90&animation=fadeIn&fontAlignY=38&desc=&descAlignY=51&descAlign=62"/>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=&message=C%2B%2B%20+Modules+from+00+to+09&color=4fa69a&style=for-the-badge&logo=" alt="GitHub Overview" width="250px"/>
+  <img src="https://img.shields.io/static/v1?label=&message=C%2B%2B%20+Modules+from+00+to+09&color=4fa69a&style=for-the-badge&logo=" alt="GitHub Overview"/>
 
 </p>
 </div>
@@ -92,7 +92,7 @@ This repository follows the 42 project expectations:
 
 <h3 align="center">Learning Goal</h3>
 
-The main goal of this repository is to document a full progression through C++ fundamentals to more advanced concepts, with each module building directly on the previous one.
+The main goal of this repository is to document a full progression through C+++Fundamentals to more advanced concepts, with each module building directly on the previous one.
 
 ---
 
