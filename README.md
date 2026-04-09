@@ -1,13 +1,27 @@
-# 42 C++ Modules (00–09)
+</div>
 
-## Overview
+<p align='center'>
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=4fa69a&height=300&section=header&text=C%2B%2B%20+Modules&fontSize=90&animation=fadeIn&fontAlignY=38&desc=&descAlignY=51&descAlign=62"/>
+
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=&message=C%2B%2B%20+Modules+from+00+to+09&color=4fa69a&style=for-the-badge&logo=" alt="GitHub Overview" width="250px"/>
+
+</p>
+</div>
+
+---
+
+<div align="left">
+<h3 align="center">Overview</h3>
 
 This repository contains my implementation of the **42 School C++ Modules** curriculum, from **Module 00** to **Module 09**.
 The C++ Modules track is designed to progressively build strong foundations in modern object-oriented and generic programming concepts using C++ (typically within C++98 constraints defined by the subject).
 
 Each module is split into exercises (`ex00`, `ex01`, etc.), and each exercise is an independent mini-project with its own source files and `Makefile`.
 
-## What the C++ Modules Are
+---
+
+<h3 align="center"> What the C++ Modules Are</h3>
 
 The 42 C++ Modules are a step-by-step learning path that introduces and reinforces:
 
@@ -22,7 +36,9 @@ The 42 C++ Modules are a step-by-step learning path that introduces and reinforc
 
 The curriculum emphasizes writing clear, maintainable, and standards-compliant C++ code through practical exercises.
 
-## Repository Structure
+---
+
+<h3 align="center">Repository Structure</h3>
 
 - `cppModule-00/`
 - `cppModule-01/`
@@ -41,7 +57,9 @@ Inside each module:
 - a dedicated `Makefile` per exercise
 - source/header files required by that specific subject
 
-## Build and Run
+---
+
+<h3 align="center">Build and Run</h3>
 
 From the root, navigate to the target exercise folder and run:
 
@@ -59,7 +77,9 @@ make fclean
 make re
 ```
 
-## Development Standards
+---
+
+<h3 align="center">Development Standards</h3>
 
 This repository follows the 42 project expectations:
 
@@ -68,10 +88,17 @@ This repository follows the 42 project expectations:
 - clear separation between headers and implementation files
 - behavior matching each module subject's required output
 
-## Learning Goal
+---
+
+<h3 align="center">Learning Goal</h3>
 
 The main goal of this repository is to document a full progression through C++ fundamentals to more advanced concepts, with each module building directly on the previous one.
 
 ---
 
 If needed, module-specific details are documented in each module's local `README.md`.
+
+
+</div>
+
+---
