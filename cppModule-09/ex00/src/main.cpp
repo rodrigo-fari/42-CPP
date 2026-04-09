@@ -6,11 +6,11 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:15:38 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/03/30 17:15:51 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/04/03 17:00:39 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Example.hpp"
+#include "BitcoinExchange.hpp"
 
 int main(void)
 {

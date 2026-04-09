@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 14:07:36 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/03/24 18:09:57 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/04/06 13:44:58 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include <cstdlib>
+# include <algorithm>
 
 template<typename T>
 class Array {
