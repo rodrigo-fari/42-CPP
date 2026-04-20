@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/30 17:15:38 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/04/16 17:38:08 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:03:36 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,20 @@
 
 int main(int ac, char **av)
 {
-	if (ac != 2 || !av)
-		return (std::cerr << "Error: Invalid program usage!" << std::endl, 1);
+	if (ac != 2 || !av) {
+		std::cerr << "Error: could not open file." << std::endl;
+		return (1);
+	}
+
+	BitcoinExchange btc;
+	try {
 	
-	return (0);
+		btc.importDatabase("data.csv"); //Load database to struct
+		btc.parseInputFile(av[1]);
+	
+	} catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+		return (1);
+	}
 }
 
