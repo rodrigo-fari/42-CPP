@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 21:16:47 by rde-fari          #+#    #+#             */
-/*   Updated: 2026/03/26 15:04:21 by rde-fari         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:36:47 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Span {
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
 
+		
 		class OutOfBoundesException : public std::exception {
 			public:
 				const char* what() const throw();	
